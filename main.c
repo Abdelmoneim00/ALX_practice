@@ -11,6 +11,17 @@ char *line;
 char **args;
 int status;
 
+if (!isatty(STDIN_FILENO))
+{
+line = read_line();
+args = split_line(line);
+status = execute(args);
+
+free(line);
+free(args);
+
+return status;
+}
 while (1)
 {
 printf("shell> ");
