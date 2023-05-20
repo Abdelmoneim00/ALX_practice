@@ -20,7 +20,7 @@ status = execute(args);
 free(line);
 free(args);
 
-return status;
+return (status);
 }
 while (1)
 {
